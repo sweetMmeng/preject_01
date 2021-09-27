@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="jq.js"></script>-->
+		<script src="js/jQuerymin.js"></script>
+		<style type="text/css">
+			.div{
+				width: 200px;
+				height: 200px;
+				color: red;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div >
+			123
+		</div>
+		<button>提交</button>
+		
+		
+		<script type="text/javascript">
+			var a =true;
+			$(function(){
+				$('button').click(function() {
+					if(a){
+						$('div').addClass('div');
+						a=false;
+						
+					}else{
+						$('div').removeClass('div');
+						a=true;
+					}
+				})
+			})
+	
+			
+//			
+			
+		</script>
+	</body>
+</html>

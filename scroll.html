@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jQuerymin.js">
+			
+		</script>
+		<style type="text/css">
+			.father{
+				position: relative;
+			}
+			.div{
+				width: 700px;
+				height: 1500px;
+				background-color: pink;
+				margin-top: 500px;
+			}
+			span{
+				display: none;
+				position: absolute;
+				top: 600px;
+				left: 800px;
+				width: 100px;
+				height: 100px;
+				background-color: red;	
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="div">
+				123
+			</div>
+			<span>回到顶部</span>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(document).scroll(function(){
+					var h = $(".div").offset().top;
+					if($(document).scrollTop() >= h){
+						$("span").fadeIn();
+						$("span").css("position","fixed")    //设置固定定位
+						
+					}else{
+						$("span").fadeOut();
+					}
+				})
+				$("span").click(function(){
+//					$(document).scrollTop(0);
+					$("html,body").stop().animate({
+						scrollTop:0
+					});
+				})
+			})
+		</script>
+	</body>
+</html>
